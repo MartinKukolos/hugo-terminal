@@ -164,3 +164,33 @@
     }
   }
 }
+
+
+// Header menu 2.0
+.new-menu {
+  margin-top: 20px;
+  grid-gap: 8px;
+    grid-template-columns: repeat(3,1fr);
+    display: grid;
+
+    @media ($phone) {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    a {
+      padding: 5px 10px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: .8em;
+      font-weight: 600;
+      text-align: center;
+      text-transform: lowercase;
+
+      border: 2px solid $accent;
+
+      &:hover {
+        background-color: $accent;
+        color: $background;
+      }
+    }
+}
