@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{ with .Content }}
+    <div class="index-content">
+      {{ . }}
+    </div>
+  {{ end }}
+  <div class="posts">
+    {{ range .Paginator.Pages }}
+      <div class="statuslog">
+        {{ .Params.emoji }} {{ .Content }}
+        <div class="statuslog__meta">
+          <a href="https://martink.status.lol/{{ .Params.Id }}"><time class="statuslog__date" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></a>
+          <a href="{{ .Params.external_url }} ">Conversation</a>
+        </div>
+      </div>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}
