@@ -10,6 +10,15 @@
       <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
   </div>
+  <div class="footer__inner footer__buttons">
+
+    {{ if $.Site.Params.buttons }}
+      {{ range $.Site.Params.buttons }}
+        <a href="{{ .url }}" class="footer-button footer-button__{{ .name }}">{{ .text }}</a>
+      {{ end }}
+    {{ end }}
+
+  </div>
 </footer>
 
 {{ $menu := resources.Get "js/menu.js" | js.Build }}

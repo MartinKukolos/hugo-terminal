@@ -1,7 +1,6 @@
 .footer {
   padding: 40px 0;
   flex-grow: 0;
-  opacity: .5;
 
   &__inner {
     display: flex;
@@ -10,9 +9,15 @@
     margin: 0;
     width: 760px;
     max-width: 100%;
+    opacity: .5;
 
     @media ($tablet) {
       flex-direction: column;
+    }
+
+    &.footer__buttons {
+      opacity: revert;
+      flex-wrap: wrap;
     }
   }
 
@@ -40,5 +45,35 @@
     span {
       white-space: nowrap;
     }
+  }
+}
+
+.footer-button {
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: lowercase;
+  color: $color;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 5px;
+
+  &:hover {
+      color: $background;
+      background-color: $color;
+  }
+
+  &__kofi {
+    background-color: #ea76cb;
+  }
+
+  &__omglol {
+    background-color: #e64553;
+  }
+
+  &__github {
+    background-color: #11111b;
   }
 }
